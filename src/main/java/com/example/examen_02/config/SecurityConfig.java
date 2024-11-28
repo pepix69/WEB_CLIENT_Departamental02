@@ -44,8 +44,8 @@ public class SecurityConfig {
                 http.requestMatchers(HttpMethod.GET,"/examen2/obtener").hasAuthority("READ");
                 http.requestMatchers(HttpMethod.GET,"/examen2/obtener/{id}").hasAuthority("READ");
                 http.requestMatchers(HttpMethod.POST,"/examen2/crear").hasAuthority("CREATE");
-                http.requestMatchers(HttpMethod.PUT,"/examen2/actualizar").hasAuthority("UPDATE");
-                http.requestMatchers(HttpMethod.DELETE,"/examen2/eliminar").hasAuthority("DELETE");
+                http.requestMatchers(HttpMethod.PUT,"/examen2/actualizar/{id}").hasAuthority("UPDATE");
+                http.requestMatchers(HttpMethod.DELETE,"/examen2/eliminar/{id}").hasAuthority("DELETE");
                 http.anyRequest().authenticated();
             })
                 .build();
