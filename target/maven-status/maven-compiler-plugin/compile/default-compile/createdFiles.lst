@@ -1,0 +1,7 @@
+com\example\examen_02\config\SecurityConfig.class
+com\example\examen_02\services\ProductsService.class
+com\example\examen_02\entities\Products.class
+com\example\examen_02\Examen02Application.class
+com\example\examen_02\controllers\ProductsController.class
+com\example\examen_02\repositories\ProductsRepository.class
+com\example\examen_02\config\OpenApiConfiguration.class
