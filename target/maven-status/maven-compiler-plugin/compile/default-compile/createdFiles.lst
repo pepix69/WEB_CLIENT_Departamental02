@@ -1,0 +1,8 @@
+com\upiiz\expenses\config\OpenApiConfiguration.class
+com\upiiz\expenses\controller\ExpenseController.class
+com\upiiz\expenses\config\SecurityConfig.class
+com\upiiz\expenses\entities\Expense.class
+com\upiiz\expenses\repository\ExpenseRepository.class
+com\upiiz\expenses\responses\CustomResponse.class
+com\upiiz\expenses\services\ExpenseService.class
+com\upiiz\expenses\ProyectoFinalApplication.class
