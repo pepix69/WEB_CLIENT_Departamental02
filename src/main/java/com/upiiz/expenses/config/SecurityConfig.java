@@ -83,27 +83,27 @@ public class SecurityConfig {
                 .authorities("READ", "CREATE", "UPDATE", "DELETE")
                 .build();
         UserDetails user = User.withUsername("user")
-                .password(passwordEncoder().encode("user"))
+                .password(passwordEncoder().encode("1234"))
                 .roles("USER")
                 .authorities("READ")
                 .build();
         UserDetails moderator = User.withUsername("moderator")
-                .password(passwordEncoder().encode("moderator"))
+                .password(passwordEncoder().encode("1234"))
                 .roles("MODERATOR")
                 .authorities("READ", "UPDATE")
                 .build();
         UserDetails editor = User.withUsername("editor")
-                .password(passwordEncoder().encode("editor"))
+                .password(passwordEncoder().encode("1234"))
                 .roles("EDITOR")
                 .authorities("READ", "WRITE", "UPDATE")
                 .build();
         UserDetails developer = User.withUsername("developer")
-                .password(passwordEncoder().encode("developer"))
+                .password(passwordEncoder().encode("1234"))
                 .roles("DEVELOPER")
                 .authorities("READ", "WRITE", "CREATE", "UPDATE", "DELETE", "CREATE-USER")
                 .build();
         UserDetails analyst = User.withUsername("analyst")
-                .password(passwordEncoder().encode("analyst"))
+                .password(passwordEncoder().encode("1234"))
                 .roles("ANALYST")
                 .authorities("READ", "DELETE")
                 .build();
