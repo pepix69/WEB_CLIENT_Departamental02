@@ -78,32 +78,32 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails admin = User.withUsername("admin")
-                .password(passwordEncoder().encode("1234"))
+                .password(passwordEncoder().encode("admin"))
                 .roles("ADMIN")
                 .authorities("READ", "CREATE", "UPDATE", "DELETE")
                 .build();
         UserDetails user = User.withUsername("user")
-                .password(passwordEncoder().encode("user1234"))
+                .password(passwordEncoder().encode("user"))
                 .roles("USER")
                 .authorities("READ")
                 .build();
         UserDetails moderator = User.withUsername("moderator")
-                .password(passwordEncoder().encode("mode1234"))
+                .password(passwordEncoder().encode("moderator"))
                 .roles("MODERATOR")
                 .authorities("READ", "UPDATE")
                 .build();
         UserDetails editor = User.withUsername("editor")
-                .password(passwordEncoder().encode("editor1234"))
+                .password(passwordEncoder().encode("editor"))
                 .roles("EDITOR")
                 .authorities("READ", "WRITE", "UPDATE")
                 .build();
         UserDetails developer = User.withUsername("developer")
-                .password(passwordEncoder().encode("dev1234"))
+                .password(passwordEncoder().encode("developer"))
                 .roles("DEVELOPER")
                 .authorities("READ", "WRITE", "CREATE", "UPDATE", "DELETE", "CREATE-USER")
                 .build();
         UserDetails analyst = User.withUsername("analyst")
-                .password(passwordEncoder().encode("ana1234"))
+                .password(passwordEncoder().encode("analyst"))
                 .roles("ANALYST")
                 .authorities("READ", "DELETE")
                 .build();
