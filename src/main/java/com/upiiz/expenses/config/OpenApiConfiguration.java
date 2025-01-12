@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(
         info = @Info(
-                title = "API Expenses",
+                title = "API Products",
                 description = "Esta API proporciona acceso a la documentacion de mi proyecto Final",
                 version = "1.0.0",
                 contact = @Contact(
-                        name = "Alonso Dominguez Lopez",
-                        email = "adominguezl2100@alumno.ipn.mx",
+                        name = "José Ángel Montoya Zúñiga",
+                        email = "joseangelmontoya69@gmail.com",
                         url = "http://localhost:8081/contacto"
                 ),
                 license = @License(),
@@ -34,7 +34,7 @@ import org.springframework.context.annotation.Configuration;
         },
         tags = {
                 @Tag(
-                        name = "Expenses",
+                        name = "Products",
                         description = "Endpoints para expenses"
                 )
         }

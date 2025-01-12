@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.upiiz</groupId>
-	<artifactId>expenses</artifactId>
+	<artifactId>products</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Proyecto Final</name>
 	<description>Api desarrollada con Spring Boot para proyecto final Expenses</description>

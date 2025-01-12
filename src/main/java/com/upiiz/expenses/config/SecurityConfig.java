@@ -44,10 +44,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     // Configuración de permisos por endpoint
                     auth.requestMatchers("/swagger-ui/**", "/v3/api-docs/**").hasAuthority("CREATE");
-                    auth.requestMatchers(HttpMethod.GET, "/api/v1/expenses/**").hasAuthority("READ");
-                    auth.requestMatchers(HttpMethod.POST, "/api/v1/expenses/**").hasAuthority("CREATE");
-                    auth.requestMatchers(HttpMethod.PUT, "/api/v1/expenses/**").hasAuthority("UPDATE");
-                    auth.requestMatchers(HttpMethod.DELETE, "/api/v1/expenses/**").hasAuthority("DELETE");
+                    auth.requestMatchers(HttpMethod.GET, "/api/v1/products/**").hasAuthority("READ");
+                    auth.requestMatchers(HttpMethod.POST, "/api/v1/products/**").hasAuthority("CREATE");
+                    auth.requestMatchers(HttpMethod.PUT, "/api/v1/products/**").hasAuthority("UPDATE");
+                    auth.requestMatchers(HttpMethod.DELETE, "/api/v1/products/**").hasAuthority("DELETE");
                     auth.anyRequest().authenticated();
                 })
                 .build();
@@ -67,33 +67,7 @@ public class SecurityConfig {
         return daoAuthenticationProvider;
     }
 
-    /*
-    @Autowired
-    private AuthenticationConfiguration authenticationConfiguration;
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.cors().configurationSource(corsConfigurationSource())
-                .and()
-                .csrf().disable() // Deshabilitar CSRF (habilítalo en producción)
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated()) // Todas las solicitudes deben estar autenticadas
-                .httpBasic(); // Autenticación básica
-        return http.build();
-    }
-
-    @Bean
-    public AuthenticationManager authenticationManager() throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder()); // Codificador de contraseñas
-        daoAuthenticationProvider.setUserDetailsService(userDetailsService()); // Servicio de detalles del usuario
-        return daoAuthenticationProvider;
-    }
-    */
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -149,62 +123,5 @@ public class SecurityConfig {
         return source;
     }
 
-    /*
 
-    @Autowired
-    private AuthenticationConfiguration authenticationConfiguration;
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.cors().configurationSource(corsConfigurationSource())
-                .and()
-                .csrf().disable() // Deshabilitar CSRF (habilítalo en producción)
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated()) // Todas las solicitudes deben estar autenticadas
-                .httpBasic(); // Autenticación básica
-        return http.build();
-    }
-
-    @Bean
-    public AuthenticationManager authenticationManager() throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder()); // Codificador de contraseñas
-        daoAuthenticationProvider.setUserDetailsService(userDetailsService()); // Servicio de detalles del usuario
-        return daoAuthenticationProvider;
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-        // return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails admin = User.withUsername("admin")
-                .password(passwordEncoder().encode("1234"))
-                .roles("ADMIN")
-                .build();
-        UserDetails user = User.withUsername("user")
-                .password(passwordEncoder().encode("user1234"))
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(admin, user);
-    }
-
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("*");
-        configuration.addAllowedMethod("*");
-        configuration.addAllowedHeader("*");
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
-     */
 }

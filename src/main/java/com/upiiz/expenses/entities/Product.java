@@ -7,19 +7,27 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "expenses")
-public class Expense {
+@Table(name = "products")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "expense_id")
-    private Long expenseId;
+    private Long id;
 
+    private String name;
+    private String description;
+    private int price;
+    private int stock;
+    private Date created_at = new Date();
+
+    /*
     @Column(name = "expense_date", nullable = false)
     private LocalDate expenseDate;
 
@@ -28,4 +36,6 @@ public class Expense {
 
     @Column(columnDefinition = "TEXT")
     private String description;
+
+     */
 }
