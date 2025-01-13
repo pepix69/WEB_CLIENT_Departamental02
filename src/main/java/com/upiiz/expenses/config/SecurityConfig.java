@@ -43,7 +43,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless para APIs REST
                 .authorizeHttpRequests(auth -> {
                     // Configuración de permisos por endpoint
-                    auth.requestMatchers("/swagger-ui/**", "/v3/api-docs/**").hasAuthority("CREATE");
+                    auth.requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll();
                     auth.requestMatchers(HttpMethod.GET, "/api/v1/products/**").hasAuthority("READ");
                     auth.requestMatchers(HttpMethod.POST, "/api/v1/products/**").hasAuthority("CREATE");
                     auth.requestMatchers(HttpMethod.PUT, "/api/v1/products/**").hasAuthority("UPDATE");
