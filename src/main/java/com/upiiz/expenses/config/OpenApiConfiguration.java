@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Configuration;
                 ),
                 @Server(
                         description = "Servidor de Produccion",
-                        url = "https://wcbdf-adl-api-expenses.onrender.com"
+                        url = "https://web-client-departamental02.onrender.com"
                 )
         },
         tags = {
